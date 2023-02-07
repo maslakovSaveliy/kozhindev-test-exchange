@@ -49,7 +49,7 @@ const CurrencySelect: FC<Props> = ({
                 },
               }}
             >
-              Valute
+              Валюта
             </InputLabel>
             <Select
               value={currency.name}

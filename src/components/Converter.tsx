@@ -96,7 +96,7 @@ const Converter: FC = () => {
 
   return (
     <Box margin={5}>
-      <Typography variant="h4">Converter</Typography>
+      <Typography variant="h4">Конвертер</Typography>
       <Divider />
       {error ? (
         <Typography color="red" variant="h5">

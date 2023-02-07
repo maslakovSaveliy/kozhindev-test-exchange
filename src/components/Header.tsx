@@ -27,7 +27,7 @@ const Header: FC = () => {
           sx={{ marginRight: "10px" }}
           onClick={updateCurrency}
         >
-          Update
+          Обновить
         </Button>
         <HeaderTime type={phone && "phone"} />
       </Toolbar>

@@ -1,5 +1,5 @@
 import { Grid, Skeleton, Typography } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useAppSelector } from "../../hooks/redux";
 import { date } from "../../utils/date";
 
@@ -9,7 +9,16 @@ interface Props {
 
 const HeaderTime: FC<Props> = ({ type }) => {
   const { isLoading, timestamp, error } = useAppSelector((state) => state);
-  const updateTime = date(timestamp!);
+  const [updateTime, setUpdateTime] = useState<string>("");
+  useEffect(() => {
+    setUpdateTime(date(timestamp!));
+    const interval = setInterval(() => {
+      setUpdateTime(date(timestamp!));
+    }, 60000);
+    return () => {
+      clearInterval(interval);
+    };
+  });
   if (type == "phone") {
     return (
       <Grid
@@ -18,24 +27,24 @@ const HeaderTime: FC<Props> = ({ type }) => {
         alignItems="center"
         whiteSpace="nowrap"
       >
-        <Typography>Last update:</Typography>
+        <Typography>Данные получены</Typography>
         {isLoading ? (
           <Skeleton>
             <Typography>{updateTime}</Typography>
           </Skeleton>
         ) : (
-          <Typography>{error ? error : `${updateTime}`}</Typography>
+          <Typography>{error ? error : updateTime}</Typography>
         )}
       </Grid>
     );
   }
   return (
     <Grid
-      maxWidth="250px"
+      maxWidth="300px"
       sx={{ display: "flex", flexDirection: "row" }}
       gap={1}
     >
-      <Typography>Last update:</Typography>
+      <Typography>Данные получены</Typography>
       {isLoading ? (
         <Skeleton>
           <Typography>{updateTime}</Typography>
