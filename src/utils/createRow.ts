@@ -1,6 +1,6 @@
 import { IValute } from "../models/IValute";
 import { course } from "./course";
-import { CODES } from "./valuteCodes";
+import { CODES } from "../constants/valuteCodes";
 
 export const createRow = (item: IValute, currencies: IValute[]) => ({
   id: item.ID,

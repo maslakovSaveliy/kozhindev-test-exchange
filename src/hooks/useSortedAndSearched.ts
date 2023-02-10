@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { IRow } from "../models/IRow";
 import { course } from "../utils/course";
-import { CODES } from "../utils/valuteCodes";
+import { CODES } from "../constants/valuteCodes";
 import { useAppSelector } from "./redux";
 
 export const useSorted = (rows: IRow[], sortMethod: string) => {

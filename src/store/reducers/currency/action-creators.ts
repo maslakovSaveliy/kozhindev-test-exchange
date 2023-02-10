@@ -2,7 +2,7 @@ import { CurrencyAction, CurrencyActionEnum } from "./types";
 import axios from "axios";
 import { Dispatch } from "react";
 import { IValute } from "../../../models/IValute";
-import { RUB } from "../../../utils/RUB";
+import { RUB } from "../../../constants/RUB";
 
 export const CurrencyActionCreators = {
   getCurrencies: () => async (dispatch: Dispatch<CurrencyAction>) => {

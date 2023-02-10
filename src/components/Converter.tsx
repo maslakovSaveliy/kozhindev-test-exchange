@@ -2,8 +2,8 @@ import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import React, { FC, useEffect, useState } from "react";
 import { useAppSelector } from "../hooks/redux";
 import { convert } from "../utils/convert";
-import { rule } from "../utils/validateRule";
-import { CODES } from "../utils/valuteCodes";
+import { rule } from "../regularExpressions/validateRule";
+import { CODES } from "../constants/valuteCodes";
 import CurrencySelect from "./UI/CurrencySelect";
 
 export interface CurrencyInputState {
